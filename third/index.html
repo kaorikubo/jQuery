@@ -30,17 +30,15 @@
       // .eq() 引数に応じたindexの要素を指定します。
       // .addClass() クラスを追加します。
       // .removeClass() クラスを削除します。
-      $(function(){
-        var nab = $('.nab > li'),
-      	content = $('.content > li');
-
-        tab.on('click',function(){
-          var idx = tab.index($(this));
-          tab.removeClass("active").eq(idx).addClass("active");
-          content.removeClass("active").eq(idx).addClass("active");
-        });
+        $('.nav > li').on('click', 
+        function() {
+        // console.log('aaaa')
+        var index = $('.nav > li').index(this);
+        // console.log(index)
+        $('.contents > li').eq(index).removeClass('is-hidden').siblings().addClass('is-hidden');
       });
-
+   
+      
 
     </script>
   </body>
